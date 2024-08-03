@@ -1,0 +1,121 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/blue"
+        android:alpha="0.5"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_above="@id/card_view"
+        android:padding="28dp">
+
+        <ImageView
+            android:layout_width="287dp"
+            android:layout_height="103dp"
+            android:src="@drawable/calculator" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LOAN APP"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-medium"
+            android:textSize="32sp"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:cardCornerRadius="28dp"
+        android:layout_marginBottom="-20dp"
+        android:id="@+id/card_view">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="28dp">
+
+            <TextView
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                android:text="Welcome"
+                android:textColor="@color/blue"
+                android:textSize="32sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Please key in with your information"
+                android:alpha="0.7"/>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Username"
+                android:alpha="0.7"
+                android:textStyle="bold"
+                android:id="@+id/usernameLabel"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:id="@+id/usernameEditText"
+                android:focusable="true"
+                android:clickable="true"/>
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Birthdate"
+                android:alpha="0.7"
+                android:textStyle="bold"
+                android:id="@+id/birthdateLabel"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="date"
+                android:id="@+id/birthdateEditText"
+                android:focusable="false"
+                android:clickable="true"/>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="Get Started!"
+                app:cornerRadius="32dp"
+                android:id="@+id/loginButton"/>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

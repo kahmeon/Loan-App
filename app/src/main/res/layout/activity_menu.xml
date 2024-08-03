@@ -1,0 +1,159 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".menu">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/darkblue"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:title="LOAN TYPES"
+            app:titleTextColor="@android:color/white"
+            app:menu="@menu/menu_edit"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/blue"
+            android:alpha="0.4"
+            app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+        <TextView
+            android:id="@+id/greeting_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome back,"
+            android:textColor="@android:color/white"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="40dp"
+            tools:text="Welcome back," />
+
+        <TextView
+            android:id="@+id/name_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Please select your loan type:"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/greeting_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp"
+            tools:text="Please select your loan type:" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/options_layout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/name_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="40dp"
+            app:layout_constraintVertical_bias="0.5"
+            tools:ignore="MissingConstraints">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/personalloan"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="8dp"
+                android:padding="16dp"
+                app:cardCornerRadius="40dp"
+                app:cardElevation="4dp"
+                app:layout_constraintEnd_toStartOf="@id/housing_loan"
+                app:layout_constraintHeight_percent="0.3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.45">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/darkblue"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ic_housingloan"
+                        tools:src="@drawable/ic_housingloan" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Personal Loan"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        tools:text="Personal Loan" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/housing_loan"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="8dp"
+                android:padding="16dp"
+                app:cardCornerRadius="40dp"
+                app:cardElevation="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.3"
+                app:layout_constraintStart_toEndOf="@id/personalloan"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.45">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/darkblue"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ic_housingloan"
+                        tools:src="@drawable/ic_housingloan" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Housing Loan"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        tools:text="Housing Loan" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/edit_user_info_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit User Info"
+            app:layout_constraintTop_toBottomOf="@id/options_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp"
+            android:onClick="onEditUserInfoClick" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

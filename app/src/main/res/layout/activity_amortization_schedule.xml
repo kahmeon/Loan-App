@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".AmortizationSchedule">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/darkblue"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:title="Amortization Schedule"
+        android:titleTextColor="@android:color/white"
+        android:layout_gravity="top"/>
+
+    <!-- User input information section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Loan details"
+            android:textStyle="bold"
+            android:padding="4dp"/>
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1"
+            android:showDividers="middle"
+            android:divider="@android:color/darker_gray"
+            android:dividerPadding="2dp">
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Loan amount (RM)"
+                    android:padding="4dp"/>
+                <TextView
+                    android:id="@+id/tvLoanAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Interest rate (% per annum)"
+                    android:padding="4dp"/>
+                <TextView
+                    android:id="@+id/tvInterestRate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Loan tenure (months)"
+                    android:padding="4dp"/>
+                <TextView
+                    android:id="@+id/tvLoanTenure"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"/>
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableLayout
+                android:id="@+id/tableLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:stretchColumns="1"
+                android:showDividers="middle"
+                android:divider="@android:color/darker_gray"
+                android:dividerPadding="2dp">
+
+                <!-- Table headers -->
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Payment number"
+                        android:textStyle="bold"
+                        android:padding="8dp"
+                        android:maxLines="1"
+                        android:ellipsize="end"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Beginning balance (RM)"
+                        android:textStyle="bold"
+                        android:padding="8dp"
+                        android:maxLines="1"
+                        android:ellipsize="end"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Monthly repayment (RM)"
+                        android:textStyle="bold"
+                        android:padding="8dp"
+                        android:maxLines="1"
+                        android:ellipsize="end"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Interest paid (RM)"
+                        android:textStyle="bold"
+                        android:padding="8dp"
+                        android:maxLines="1"
+                        android:ellipsize="end"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Principal paid (RM)"
+                        android:textStyle="bold"
+                        android:padding="8dp"
+                        android:maxLines="1"
+                        android:ellipsize="end"/>
+                </TableRow>
+            </TableLayout>
+        </HorizontalScrollView>
+    </ScrollView>
+</LinearLayout>
